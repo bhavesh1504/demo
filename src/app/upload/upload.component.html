@@ -1,0 +1,14 @@
+<form [formGroup]="imageGroup" (ngSubmit)="onSubmit();">
+    <h3 style="position: relative; top:10px; left: 15px; color: brown;">Image Upload</h3>
+
+    <div *ngIf="filePath && filePath !== ''">
+        <img [src]="filePath" [alt]="imageGroup.value.name" style="height:150px; width: 150px; position: relative; top: 30px;">
+    </div>
+
+      <input type="file" accept="image/*" (change)="imagePreview($event)" style="position: relative; top:50px; left:20px;" />
+    
+      <input formControlName="filename" placeholder="File name" style="position: relative; top:100px; right:275px;">
+    
+      <button type="submit" style="position: relative; top:100px; right:270px;">Upload</button>
+
+</form>
